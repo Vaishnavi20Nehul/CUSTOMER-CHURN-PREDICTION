@@ -1,0 +1,91 @@
+CUSTOMER CHURN PREDICTION — PROJECT DOCUMENTATION
+
+1) Project Title:
+Customer Churn Prediction using Machine Learning
+
+2) Objective:
+The objective of this project is to develop a machine learning model that predicts whether a customer will churn (leave the service) based on historical customer data such as demographics, account information, and usage behavior.
+
+This helps businesses:
+ i)Reduce revenue loss
+ii)Identify at-risk customers
+iii)Improve customer retention strategies
+
+3) Dataset Description:
+Dataset Name: Churn_Modelling.csv
+Total Records: 10,000 customers
+Total Features: 14 columns
+
+Important Columns:
+Feature	Description
+CreditScore	Customer credit score
+Geography	Country of customer
+Gender	Male/Female
+Age	Customer age
+Tenure	Years with company
+Balance	Account balance
+NumOfProducts	Number of bank products
+HasCrCard	Credit card ownership
+IsActiveMember	Active membership status
+EstimatedSalary	Estimated salary
+Exited	Target variable (1 = churn, 0 = stay)
+
+4) Libraries used:
+ i)  Pandas->Data loading & manupulation
+ ii) numpy->Numerical operation
+ iii)matplotlib/seaborn->Data visulization
+ iv) sklearn.model_selection->Train-Test Split
+ v)  sklearn.preprocessing->Feature scaling
+ vi) sklearn.linear_model->Logistic Regression
+ vii)sklearn.ensemble->Random Forest & Gradient Boosting
+ viii)sklearn.ensemble->Model evaluation
+ ix) sklearn.metrics->model evaluation
+
+5)Methodology
+The Project followed a structured ML pipeline
+Step 1: Data Loading
+Dataset loaded using pandas.
+Step 2: Data Cleaning
+Checked for missing values
+Dropped irrelevant columns:
+RowNumber
+CustomerId
+Surname
+Step 3: Handling Categorical Variables
+Applied One-Hot Encoding on:
+Geography
+Gender
+Reason: ML models require numerical input.
+Step 4: Train-Test Split
+80% Training data
+20% Testing data
+Used stratify=y to maintain churn ratio
+Step 5: Feature Scaling
+Used StandardScaler.
+
+6)Models used
+1. Logistic Regression
+Used as baseline model.
+Key parameters:
+max_iter=1000
+class_weight="balanced"
+Reason:
+Dataset is imbalanced (~20% churn)
+2. Random Forest
+n_estimators=200
+class_weight="balanced"
+3. Gradient Boosting
+Boosting algorithm for improved accuracy.
+Model Evaluation Metrics
+used:
+Accuracy
+Confusion Matrix
+Precision
+Recall
+F1-score
+
+8)Accuracy Results 
+Model	Accuracy	Recall (Churn)
+Logistic Regression	~81–83%	~70–75%
+Random Forest	~85–87%	~75–80%
+Gradient Boosting	~86–88%	~78–82%
